@@ -56,3 +56,21 @@ jobs:
       - name: Build frontend
         working-directory: ./frontend
         run: npm run build
+
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Format Check
+        run: npm run format:check
