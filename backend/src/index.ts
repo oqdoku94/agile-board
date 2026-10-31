@@ -1,13 +1,5 @@
-import express from 'express';
-
-const app = express();
-
-app.get("/health", (_req, res) => {
-    res.send({
-        status: 'ok'
-    });
-})
+import app from './app.js'
 
 app.listen(8080, () => {
-    console.log('server started');
-});
+  console.log('server started')
+})
