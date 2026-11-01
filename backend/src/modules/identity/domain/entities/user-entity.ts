@@ -1,5 +1,5 @@
-import BaseEntity from '../../../base/domain/entities/base.entity.js'
-import DomainValidationError from '../../../base/domain/errors/DomainValidationError.js'
+import BaseEntity from '../../../../shared/domain/entities/base.entity.js'
+import DomainValidationError from '../../../../shared/domain/errors/domain-validation-error.js'
 import { emailPattern } from '../../../../utils/patterns.js'
 
 class User extends BaseEntity {
@@ -45,7 +45,7 @@ class User extends BaseEntity {
     return undefined
   }
 
-  private static normalizeEmail(value: string): string {
+  public static normalizeEmail(value: string): string {
     if (!value) {
       throw new DomainValidationError("'email' должно быть заполнено.")
     }
@@ -62,7 +62,7 @@ class User extends BaseEntity {
     return normalizedValue
   }
 
-  private static normalizeFirstName(value: string): string {
+  public static normalizeFirstName(value: string): string {
     if (!value) {
       throw new DomainValidationError("'firstName' должно быть заполнено.")
     }
@@ -79,7 +79,7 @@ class User extends BaseEntity {
     return normalizedValue
   }
 
-  private static normalizeLastName(value: string): string {
+  public static normalizeLastName(value: string): string {
     if (!value) {
       throw new DomainValidationError("'lastName' должно быть заполнено.")
     }
@@ -95,7 +95,7 @@ class User extends BaseEntity {
     return normalizedValue
   }
 
-  private static normalizePasswordHash(value: string): string {
+  public static normalizePasswordHash(value: string): string {
     if (!value || value.trim().length === 0) {
       throw new DomainValidationError("'passwordHash' должно быть заполнено.")
     }

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import User from '../entities/user.entity.js'
-import DomainValidationError from '../../../base/domain/errors/DomainValidationError.js'
+import User from '../../../../src/modules/identity/domain/entities/user-entity.js'
+import DomainValidationError from '../../../../src/shared/domain/errors/domain-validation-error.js'
 
 describe('Проверка создания User', () => {
   it('Создание User с корректными данными', () => {
