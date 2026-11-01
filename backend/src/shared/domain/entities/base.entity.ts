@@ -1,4 +1,4 @@
-import DomainValidationError from '../errors/DomainValidationError.js'
+import DomainValidationError from '../errors/domain-validation-error.js'
 
 abstract class BaseEntity {
   private _id?: string
